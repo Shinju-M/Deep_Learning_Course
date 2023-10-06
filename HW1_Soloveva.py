@@ -35,7 +35,7 @@ bias = torch.rand((1,1), requires_grad=True)
 
 loss_fn = torch.nn.MSELoss()
 
-optimizer = torch.optim.SGD([weights, bias], lr=1e-9)
+optimizer = torch.optim.SGD([weights, bias], lr=0.1)
 
 
 def predict_taste_score(obj: torch.Tensor) -> torch.Tensor:
