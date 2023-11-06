@@ -73,9 +73,11 @@ for epoch in range(num_epoch):
         model.train()
         optimizer.zero_grad()
         prediction = model(x)
+        # приведение текущего таргета к one-hot вектору
         zero_tensor = torch.zeros_like(prediction)
         zero_tensor[:, y[0]] = 1
         y = zero_tensor
+        
         loss = loss_fn(prediction, y)
         error += loss
         # print(loss)
